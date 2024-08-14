@@ -1,4 +1,4 @@
 # In progress...
 
-## All information will appear a little later.
+### All information will appear a little later.
 
