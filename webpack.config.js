@@ -1,59 +1,73 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const webpack = require('webpack');
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
+const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader';
 
-const stylesHandler = MiniCssExtractPlugin.loader;
-
-
-
-const config = {
+module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(process.cwd(), 'dist'),
+        filename: 'bundle.js',
+        clean: true,
+        publicPath: '/',
     },
-    devServer: {
-        open: true,
-        host: 'localhost',
+    resolve: {
+        extensions: ['.js', '.jsx'],
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-        }),
-
-        new MiniCssExtractPlugin(),
-
-    ],
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
+                exclude: /node_modules/,
+                use: 'babel-loader',
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [stylesHandler, 'css-loader', 'sass-loader'],
+                use: [
+                    stylesHandler,
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
+                test: /\.(eot|ttf|woff|woff2|svg|png|jpg|gif)$/i,
+                type: 'asset/resource',
             },
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
-};
-
-module.exports = () => {
-    if (isProduction) {
-        config.mode = 'production';
-        
-        
-    } else {
-        config.mode = 'development';
-    }
-    return config;
+    devServer: {
+        historyApiFallback: true,
+        open: true,
+        host: 'localhost',
+        port: 3000,
+        static: {
+            directory: path.resolve(process.cwd(), 'public'),
+        },
+        hot: true,
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+            inject: 'body',
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
+        new ESLintPlugin({
+            extensions: ['js', 'jsx'],
+            emitWarning: !isProduction,
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+        }),
+    ],
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
+    mode: isProduction ? 'production' : 'development',
 };

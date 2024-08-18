@@ -1,0 +1,47 @@
+@font-face
+  font-family: 'Arial Bold'
+  src: url('/Users/varvaratihonova/WebstormProjects/retired&fly/public/fonts/Arial Bold.ttf') format('truetype')
+
+.header
+  background-color: #192738
+  width: 100%
+  height: 30px
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  padding: 0
+  margin: 0
+
+  .header-left
+    display: flex
+    align-items: center
+    padding-left: 19px
+
+    .header-logo
+      width: 20px
+      height: auto
+
+  .header-nav
+    display: flex
+    gap: 30px
+    margin-left: 20px
+
+    .header-link
+      color: white
+      text-decoration: none
+      font-size: 14px
+      transition: color 0.2s ease
+      font-family: 'Arial Bold', serif
+
+      &:hover
+        color: #0066FF
+
+  .header-right
+    display: flex
+    justify-content: flex-end
+    margin-left: auto
+    padding-right: 10px
+
+    .header-photo
+      width: 414px
+      height: 30px
