@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.sass';
 import Header from "./components/header/Header";
+import Hello from "./pages/hello/Hello";
 
 const App = () => {
   return (
-      <Header/>
+      <div>
+        <Header/>
+        <Hello/>
+      </div>
   );
 };
 
