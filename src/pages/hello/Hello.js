@@ -12,6 +12,17 @@ import folderDarkPink_text from '../../../public/images/main_page/xxx.png';
 import folderPink from "../../../public/images/main_page/folders/folderPink.png";
 import folderPink_text from '../../../public/images/main_page/28.05.24 party2.png';
 
+import grandma_photo from "../../../public/images/main_page/granma&pa/second.png";
+import grandma_text from "../../../public/images/main_page/granma&pa/grandma_text.png";
+
+
+import grandfa_photo from "../../../public/images/main_page/granma&pa/first.png";
+import grandfa_text from "../../../public/images/main_page/granma&pa/grandfa_text.png";
+
+import fuck_photo from "../../../public/images/main_page/granma&pa/third.png";
+import fuck_text from "../../../public/images/main_page/granma&pa/fuck_text.png";
+
+
 const Hello = () => {
     return (
         <div className='container_hello'>
@@ -38,6 +49,21 @@ const Hello = () => {
             </div>
 
             <div className="granMa_Pa">
+
+                <div className="grandma_pa">
+                    <img className="grandma_photo" src={grandma_photo} alt="grandma_photo"/>
+                    <img className="grandma_text" src={grandma_text} alt="grandma_text"/>
+                </div>
+
+                <div className="grandfa">
+                    <img className="grandfa_photo" src={grandfa_photo} alt="grandfa_photo"/>
+                    <img className="grandfa_text" src={grandfa_text} alt="grandfa_text"/>
+                </div>
+
+                <div className="fuck">
+                    <img className="fuck_photo" src={fuck_photo} alt="fuck_photo"/>
+                    <img className="fuck_text" src={fuck_text} alt="fuck_text"/>
+                </div>
 
             </div>
         </div>
