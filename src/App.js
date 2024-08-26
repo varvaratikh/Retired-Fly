@@ -2,20 +2,28 @@ import React from 'react';
 import './App.sass';
 import Header from "./components/header/Header";
 import Hello from "./pages/hello/Hello";
-import NewCollactions from "./pages/new_collections/NewCollections";
-import Collactions from "./pages/collections/Collections";
 import Game from "./pages/game/Game";
 import Screansaver from "./pages/screensaver/Screansaver";
+import Footer from "./components/footer/Footer";
+import NewCollections from "./pages/new_collections/NewCollections";
+import Collections from "./pages/collections/Collections";
 
 const App = () => {
   return (
       <div>
         <Header/>
         <Hello/>
-        <NewCollactions/>
-        <Collactions/>
+          <section id="new-collection">
+              <NewCollections />
+          </section>
+          <section id="catalog">
+              <Collections />
+          </section>
         <Screansaver/>
-        <Game/>
+          <section id="game">
+              <Game />
+          </section>
+        <Footer/>
       </div>
   );
 };
