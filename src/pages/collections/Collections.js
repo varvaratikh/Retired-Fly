@@ -3,6 +3,9 @@ import './Collections.sass';
 import Men from '../../../public/images/retired&fly/men.png';
 import icecream_women from '../../../public/images/retired&fly/icecream_women.png';
 import women_cigaret from '../../../public/images/retired&fly/women_with_sigaret.png';
+import Old from "./old/Old";
+import GoldenAge from "./golden_age/GoldenAge";
+import AgeNumber from "./age_number/AgeNumber";
 
 
 const Collactions = () => {
@@ -39,8 +42,14 @@ const Collactions = () => {
                         className={`image_button ${activeImage === 'right' ? 'active' : ''}`}
                         onClick={() => setActiveImage('right')}
                     >
-                        <img src={icecream_women} alt="Right" />
+                        <img className='icecream' src={icecream_women} alt="Right" />
                     </button>
+                </div>
+
+                <div className="active_component_container">
+                    {activeImage === 'left' && <GoldenAge />}
+                    {activeImage === 'center' && <Old />}
+                    {activeImage === 'right' && <AgeNumber />}
                 </div>
             </div>
         </div>

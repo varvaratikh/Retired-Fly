@@ -7,37 +7,37 @@
   src: url('/Users/varvaratihonova/WebstormProjects/retired&fly/public/fonts/Arial.ttf') format('truetype')
 
 
-.collactions_container
+.collactions_container 
   width: 1512px
   height: 1045px
 
 
-.white_container
-  position: absolute
+.white_container 
+  position: relative
   display: flex
   flex-direction: column
-  justify-content: center
   align-items: center
-  text-align: center
   width: 1405px
   height: 615px
   background-color: #EDEDED
-  margin-left: auto
-  margin-right: auto
+  margin: 21px auto 0
   z-index: 0
-  left: calc(50% - 1405px/2)
-  margin-top: 21px
 
-.retried_fly
+
+.retried_fly 
+  position: absolute
   color: black
   font-family: 'Arial Narrow Bold', sans-serif
-  z-index: 0
   font-size: 272px
   white-space: nowrap
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
   margin-bottom: 54px
-  position: absolute
+  z-index: 0
 
-.name_collactions
+
+.name_collactions 
   display: flex
   justify-content: space-between
   width: 100%
@@ -48,36 +48,51 @@
   z-index: 1
   text-align: center
   margin-bottom: auto
-  padding: 0 100px
+  padding: 0 90px
+  //margin-bottom: 100px
 
-  span
+  span 
     white-space: nowrap
     margin: 33px 50px
 
 
-.images_container
+
+.images_container 
   display: flex
   justify-content: center
   width: 100%
   z-index: 1
   gap: 124px
-  margin-top: auto
-  position: absolute
+  margin-bottom: auto
+  position: relative
   bottom: 0
 
-.image_button
+
+.image_button 
   background: none
   border: none
   outline: none
   cursor: pointer
 
-  img
+  img 
     width: 350px
     transition: filter 0.6s ease-in-out
 
-  &.active img
+
+  &.active img 
     filter: none
 
-  &:not(.active) img
+
+  &:not(.active) img 
     filter: blur(9px)
+
+
+
+.icecream 
+  margin-top: 90px
+
+
+.active_component_container 
+  margin-top: 40px
+  width: 100%
 
