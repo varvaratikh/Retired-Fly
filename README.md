@@ -1,10 +1,4 @@
-Certainly! Here's a more personalized and well-formatted version of the README file:
-
----
-
 # Retired-Fly
-
-### In progress...
 
 Welcome to **Retired-Fly**, an online store I created for grandparents who refuse to be defined by their age. This platform is dedicated to vibrant seniors who choose to live life to the fullest and embrace their unique style. I designed this project to inspire a fresh perspective on retirement, proving that age is just a number and fashion has no boundaries.
 
@@ -43,7 +37,7 @@ I built this project using a modern tech stack, ensuring high performance and ma
 - **ESLint**: A tool for identifying and fixing JavaScript code issues.
 - **Prettier**: An opinionated code formatter to ensure consistent code style.
 - **HTML Webpack Plugin**: Simplifies the creation of HTML files to serve your bundles.
-- **Node-Sass**: Compiles `.scss` files into CSS.
+- **Node-Sass**: Compiles `.sass` files into CSS.
 - **Mini-CSS-Extract-Plugin**: Extracts CSS into separate files, optimizing for production.
 
 ## Getting Started
